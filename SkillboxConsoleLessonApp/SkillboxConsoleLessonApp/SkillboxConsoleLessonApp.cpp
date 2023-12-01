@@ -7,6 +7,4 @@
 int main()
 {   
     std::cout << sqrtSum(2, 2) << '\n';
-
-    std::cout << "ало че с русским" << '\n';
 }

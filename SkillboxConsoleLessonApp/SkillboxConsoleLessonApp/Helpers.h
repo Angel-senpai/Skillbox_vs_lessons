@@ -1,6 +1,6 @@
 #pragma once
 
-// функция возвращает квадрат суммы двух чисел
+// return sqr of sum
 int sqrtSum(int x, int y) {
 	return (x + y) * (x + y);
 }
