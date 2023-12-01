@@ -36,3 +36,9 @@
 *.ilk
 *.tlog
 *.ipch
+*.opendb
+*.db-shm
+*.db
+*.db-wal
+*.db
+SkillboxConsoleLessonApp/.vs/SkillboxConsoleLessonApp/v17/Browse.VC.db
