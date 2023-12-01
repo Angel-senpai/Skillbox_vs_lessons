@@ -5,15 +5,19 @@
 #include "Helpers.h"
 
 using std::cout;
+using std::string;
+
+void FindOddNumbers(int Limit, bool IsOdd);
+
+
 int main()
 {   
-    std::string text = "Test message";
+	FindOddNumbers(15, false);
+}
 
-    if (text.length() < 1) {
-        std::cout << "Can't find characters in string";
-        return 0; 
-    }
-    cout << "Current string: " + text + "\n";
-    cout << "First char: " << text[0] << "\nChar count: " << text.length();
-    cout << "\nLast char: " << text[text.length() - 1];
+
+void FindOddNumbers(int Limit, bool IsOdd) {
+	for (int i = IsOdd; i <= Limit - 1; i+= 2) {
+		cout << i << "\n";
+	}
 }

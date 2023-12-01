@@ -43,3 +43,8 @@
 *.db
 SkillboxConsoleLessonApp/.vs/SkillboxConsoleLessonApp/v17/Browse.VC.db
 SkillboxConsoleLessonApp/.vs/SkillboxConsoleLessonApp/v17/.suo
+*.pdb
+*.idb
+*.ilk
+*.tlog
+*.ipch
