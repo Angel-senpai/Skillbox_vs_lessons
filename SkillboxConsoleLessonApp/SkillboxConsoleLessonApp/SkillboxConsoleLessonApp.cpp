@@ -8,31 +8,29 @@ using std::cout;
 using std::string;
 
 
+class Vector {
+private:
+	double x, y, z;
+public:
+	Vector() : x(0), y(0), z(0)
+	{}
+	Vector(double _x, double _y, double _z) : x(_x), y(_y), z(_z)
+	{}
+	void showValue() {
+		cout << "\n" << x << ' ' << y << ' ' << z;
+	}
+	double v_module() {
+		return sqrt((x * x) + (y * y) + (z * z));
+	}
+};
 
 
 int main()
 {   
-	struct tm buf;
-	time_t t = time(NULL);
-	localtime_s(&buf, &t);
+	Vector v;
+	v.showValue();
 
-	const int N = 5;
-
-	int test[N][N];
-	int sum = 0;
-	int dayIndex = N % buf.tm_mday;
-	for (int i = 0; i < N; i++) {
-
-		for (int j = 0; j < N; j++) {
-			test[i][j] = i + j;
-			cout << test[i][j] << " ";
-
-			if (dayIndex == i) {
-				sum += test[i][j];
-			}
-		}
-		cout << "\n";
-	}
-
-	cout << "Sum rows with index: " << dayIndex << "\nResult: " << sum << "\n";
+	Vector vCustom(1, 1, 1);
+	vCustom.showValue();
+	cout<< "\nVector module: " << vCustom.v_module();
 }
