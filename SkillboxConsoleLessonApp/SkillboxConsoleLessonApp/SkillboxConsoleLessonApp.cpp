@@ -3,21 +3,36 @@
 
 #include <iostream>
 #include "Helpers.h"
-
+#include <time.h>
 using std::cout;
 using std::string;
 
-void FindOddNumbers(int Limit, bool IsOdd);
+
 
 
 int main()
 {   
-	FindOddNumbers(15, false);
-}
+	struct tm buf;
+	time_t t = time(NULL);
+	localtime_s(&buf, &t);
 
+	const int N = 5;
 
-void FindOddNumbers(int Limit, bool IsOdd) {
-	for (int i = IsOdd; i <= Limit - 1; i+= 2) {
-		cout << i << "\n";
+	int test[N][N];
+	int sum = 0;
+	int dayIndex = N % buf.tm_mday;
+	for (int i = 0; i < N; i++) {
+
+		for (int j = 0; j < N; j++) {
+			test[i][j] = i + j;
+			cout << test[i][j] << " ";
+
+			if (dayIndex == i) {
+				sum += test[i][j];
+			}
+		}
+		cout << "\n";
 	}
+
+	cout << "Sum rows with index: " << dayIndex << "\nResult: " << sum << "\n";
 }
