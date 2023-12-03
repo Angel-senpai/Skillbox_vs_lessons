@@ -1,6 +1,6 @@
 ﻿// SkillboxConsoleLessonApp.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "Helpers.h"
 #include <time.h>
@@ -20,7 +20,7 @@ int main()
 
 	int test[N][N];
 	int sum = 0;
-	int dayIndex = N % buf.tm_mday;
+	int dayIndex = buf.tm_mday % N;
 	for (int i = 0; i < N; i++) {
 
 		for (int j = 0; j < N; j++) {
