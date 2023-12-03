@@ -20,7 +20,7 @@ public:
 		cout << "\n" << x << ' ' << y << ' ' << z;
 	}
 	double v_module() {
-		return sqrt((x * x) + (y * y) + (z * z));
+		return sqrt(x * x + y * y + z * z);
 	}
 };
 
