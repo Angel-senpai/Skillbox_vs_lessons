@@ -12,12 +12,12 @@ void FindOddNumbers(int Limit, bool IsOdd);
 
 int main()
 {   
-	FindOddNumbers(15, false);
+	FindOddNumbers(16, false);
 }
 
 
 void FindOddNumbers(int Limit, bool IsOdd) {
-	for (int i = IsOdd; i <= Limit - 1; i+= 2) {
+	for (int i = IsOdd; i <= Limit; i+= 2) {
 		cout << i << "\n";
 	}
 }
