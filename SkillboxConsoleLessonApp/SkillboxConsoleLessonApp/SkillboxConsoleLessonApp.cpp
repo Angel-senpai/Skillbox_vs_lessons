@@ -2,35 +2,76 @@
 //
 
 #include <iostream>
-#include "Helpers.h"
-#include <time.h>
+#include <stdlib.h>
 using std::cout;
+using std::cin;
 using std::string;
 
-
-class Vector {
+class Player {
 private:
-	double x, y, z;
+	string name;
+	int score;
 public:
-	Vector() : x(0), y(0), z(0)
+	Player() : name("player"), score(0)
 	{}
-	Vector(double _x, double _y, double _z) : x(_x), y(_y), z(_z)
+	Player(string _name, int _score) : name(_name), score(_score)
 	{}
-	void showValue() {
-		cout << "\n" << x << ' ' << y << ' ' << z;
+
+	const string& const _name = name;
+	const int& const _score = score;
+
+	void setScore(int value) {
+		score = value;
 	}
-	double v_module() {
-		return sqrt(x * x + y * y + z * z);
+	void setName(string value) {
+		name = value;
+	}
+
+	void showInfo() {
+		cout << "\nName: " << name << "\n";
+		cout << "Score " << score << "\n";
 	}
 };
 
 
 int main()
-{   
-	Vector v;
-	v.showValue();
+{
+	int players_count;
+	cout << "Enter players count: ";
+	cin >> players_count;
+	Player** players = new Player* [players_count];
 
-	Vector vCustom(1, 1, 1);
-	vCustom.showValue();
-	cout<< "\nVector module: " << vCustom.v_module();
+
+	system("CLS");
+	for (int i = 0; i < players_count; i++) {
+		string name;
+		int score;
+
+		cout << "Enter player #"<< i+1 << "\n";
+		cout << "Name: ";
+		cin >> name;
+		cout << "Score: ";
+		cin >> score;
+		cout << "\n";
+		players[i] = new Player(name, score);
+		
+	}
+	system("CLS");
+
+	for (int i = 0; i < players_count; i++) {
+		Player* p = players[i];
+		for (int j = i - 1; j >= 0 && players[j]->_score > p->_score; j--) {
+			players[j + 1] = players[j];
+			players[j] = p;
+		}
+	}
+
+	for (int i = 0; i < players_count; i++) {
+		players[i]->showInfo();
+	}
+
+	delete[] players;
+	players = nullptr;
+
+	return 0;
 }
