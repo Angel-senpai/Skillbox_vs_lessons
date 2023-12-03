@@ -6,5 +6,5 @@
 
 int main()
 {   
-    std::cout << sqrtSum(2, 2) << '\n';
+    std::cout << sqrSum(2, 2) << '\n';
 }
