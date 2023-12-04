@@ -7,71 +7,63 @@ using std::cout;
 using std::cin;
 using std::string;
 
-class Player {
-private:
-	string name;
-	int score;
+class Animal {
 public:
-	Player() : name("player"), score(0)
-	{}
-	Player(string _name, int _score) : name(_name), score(_score)
-	{}
-
-	const string& const _name = name;
-	const int& const _score = score;
-
-	void setScore(int value) {
-		score = value;
+	Animal() {}
+	virtual void Voice() {
+		cout << "Making noice";
 	}
-	void setName(string value) {
-		name = value;
-	}
+};
 
-	void showInfo() {
-		cout << "\nName: " << name << "\n";
-		cout << "Score " << score << "\n";
+class Dog : public Animal {
+public:
+	Dog(){}
+	void Voice() override {
+		cout << "Woof";
+	}
+};
+
+class Cat : public Animal {
+public:
+	Cat(){}
+	void Voice() override {
+		cout << "myau!";
+	}
+};
+
+
+class Cow : public Animal {
+public:
+	Cow(){}
+	void Voice() override {
+		cout << "mu!";
 	}
 };
 
 
 int main()
 {
-	int players_count;
-	cout << "Enter players count: ";
-	cin >> players_count;
-	Player** players = new Player* [players_count];
-
-
-	system("CLS");
-	for (int i = 0; i < players_count; i++) {
-		string name;
-		int score;
-
-		cout << "Enter player #"<< i+1 << "\n";
-		cout << "Name: ";
-		cin >> name;
-		cout << "Score: ";
-		cin >> score;
-		cout << "\n";
-		players[i] = new Player(name, score);
-		
-	}
-	system("CLS");
-
-	for (int i = 0; i < players_count; i++) {
-		Player* p = players[i];
-		for (int j = i - 1; j >= 0 && players[j]->_score > p->_score; j--) {
-			players[j + 1] = players[j];
-			players[j] = p;
+	int numberOfAnimals = 10;
+	Animal** animals = new Animal*[numberOfAnimals];
+	for (int i = 0; i < numberOfAnimals; i++) {
+		if (i % 2 == 0) {
+			animals[i] = new Dog();
+		}
+		else if (i % 3 == 0) {
+			animals[i] = new Cat();
+		}
+		else {
+			animals[i] = new Cow();
 		}
 	}
 
-	for (int i = 0; i < players_count; i++) {
-		players[i]->showInfo();
+	for (int i = 0; i < numberOfAnimals; i++) {
+		animals[i]->Voice();
+		cout << "\n";
 	}
 
-	delete[] players;
-	players = nullptr;
+	delete[] animals;
+	animals = nullptr;
 
 	return 0;
 }

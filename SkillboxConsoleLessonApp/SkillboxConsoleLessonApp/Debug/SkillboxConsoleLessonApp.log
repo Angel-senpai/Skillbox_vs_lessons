@@ -1,6 +1,1 @@
-﻿  SkillboxConsoleLessonApp.cpp
-C:\Users\Angel\Documents\Visual studio\Skillbox_vs_lessons\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp.cpp(20,14): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\Angel\Documents\Visual studio\Skillbox_vs_lessons\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp.cpp(21,11): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\Angel\Documents\Visual studio\Skillbox_vs_lessons\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp.cpp(15,34): warning C4305: 'initializing': truncation from '__int64' to 'int'
-C:\Users\Angel\Documents\Visual studio\Skillbox_vs_lessons\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp\SkillboxConsoleLessonApp.cpp(15,35): warning C4309: 'initializing': truncation of constant value
-  SkillboxConsoleLessonApp.vcxproj -> C:\Users\Angel\Documents\Visual studio\Skillbox_vs_lessons\SkillboxConsoleLessonApp\Debug\SkillboxConsoleLessonApp.exe
+﻿  SkillboxConsoleLessonApp.vcxproj -> C:\Users\Angel\Documents\Visual studio\Skillbox_vs_lessons\SkillboxConsoleLessonApp\Debug\SkillboxConsoleLessonApp.exe
