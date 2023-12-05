@@ -17,8 +17,8 @@ public:
 	Player(string _name, int _score) : name(_name), score(_score)
 	{}
 
-	const string& const _name = name;
-	const int& const _score = score;
+	const string& _name = name;
+	const int& _score = score;
 
 	void setScore(int value) {
 		score = value;
@@ -60,7 +60,7 @@ int main()
 
 	for (int i = 0; i < players_count; i++) {
 		Player* p = players[i];
-		for (int j = i - 1; j >= 0 && players[j]->_score > p->_score; j--) {
+		for (int j = i - 1; j >= 0 && players[j]->_score < p->_score; j--) {
 			players[j + 1] = players[j];
 			players[j] = p;
 		}
